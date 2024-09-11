@@ -20,6 +20,8 @@ impl BitcoinKeys {
     };
 
     let master_key = ExtendedPrivKey::new_master(network, &seed.secret_bytes()).unwrap();
+
+    println!("your seed is {}", seed.display_secret());
     BitcoinKeys { master_key: master_key.to_string(), network: network.magic() }
   }
 }
